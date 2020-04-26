@@ -30,9 +30,17 @@ class PokemonCard extends StatelessWidget {
                 child: Container(
                   height: screenHeight * 0.15,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: _typeDecorations.getCardColor(pokemon.types[0].name),
-                  ),
+                      borderRadius: BorderRadius.circular(12),
+                      color:
+                          _typeDecorations.getCardColor(pokemon.types[0].name),
+                      boxShadow: [
+                        BoxShadow(
+                          color: _typeDecorations
+                              .getCardColor(pokemon.types[0].name)
+                              .withOpacity(0.7),
+                          blurRadius: 5,
+                        ),
+                      ]),
                   child: Row(
                     children: <Widget>[
                       Padding(

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 class TypeDecoration {
 
-  static double _opacity = 0.85;
-
   Map<String, Map> _typesDecorations = {
     "grass": {
       "cardColor": Color(0xFF8BD674).withOpacity(0.85),

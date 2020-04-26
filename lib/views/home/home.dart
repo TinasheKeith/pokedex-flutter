@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pokedex_app/models/pokemon_model.dart';
 import 'package:pokedex_app/services/pokedex_service.dart';
 import 'package:pokedex_app/models/pokemon_list_model.dart';
+import 'package:pokedex_app/shared/dark_mode_toggle/dark_mode_toggle.dart';
 import 'pokemon_list_view.dart';
 import 'package:provider/provider.dart';
 
@@ -17,32 +18,22 @@ class Home extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        // actions: <Widget>[
-        //   IconButton(
-        //     icon: Icon(
-        //       FontAwesomeIcons.gripHorizontal,
-        //     ),
-        //     onPressed: () {},
-        //   ),
-        //   IconButton(
-        //     icon: Icon(FontAwesomeIcons.sort, size: 20),
-        //     onPressed: () {},
-        //   ),
-        //   IconButton(
-        //     icon: Icon(FontAwesomeIcons.slidersH, size: 20),
-        //     onPressed: () {},
-        //   ),
-        // ],
+        actions: <Widget>[],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(
-              "Pokédex",
-              style: Theme.of(context).textTheme.display2,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  "Pokédex",
+                  style: Theme.of(context).textTheme.display2,
+                ),
+                DarkModeToggle(),
+              ],
             ),
             SizedBox(height: 12),
             Text(

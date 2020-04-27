@@ -36,7 +36,6 @@ class PokedexService {
       List<PokemonListItemModel> pokemonListModel) async {
     List<PokemonModel> pokemonList = [];
 
-
     await Future.forEach(
       pokemonListModel,
       (PokemonListItemModel listItem) async {
@@ -45,7 +44,17 @@ class PokedexService {
       },
     );
 
-
     return pokemonList;
+  }
+
+  Future<SpeciesInfo> getSpecies(String url) async {
+    try {
+      final response = await http.get(url);
+      SpeciesInfo species = SpeciesInfo.fromMap(json.decode(response.body));
+      return species;
+    } catch (err) {
+      print(err.toString());
+      return null;
+    }
   }
 }

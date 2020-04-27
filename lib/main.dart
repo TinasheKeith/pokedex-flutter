@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex_app/notifiers/theme_mode_notifier.dart';
 import 'package:pokedex_app/themes.dart';
+import 'package:pokedex_app/views/pokemon_detail/pokemon_detail.dart';
 import 'package:provider/provider.dart';
 
 import 'package:pokedex_app/models/pokemon_list_model.dart';
@@ -31,11 +32,14 @@ class App extends StatelessWidget {
 
     return MaterialApp(
       title: 'pokedex',
-      home: Home(),
       debugShowCheckedModeBanner: false,
       theme: appThemeMode.isDarkMode
           ? _appTheme.darkTheme()
           : _appTheme.lightTheme(),
+      routes: {
+        "/": (context) => Home(),
+        "/pokemon-detail": (context) => PokemonDetail(),
+      },
     );
   }
 }
